@@ -10,7 +10,7 @@ class InstaBot:
         self.driver = webdriver.Chrome(executable_path=r'./chromedriver')
         self.usuario = ''
         self.senha = ''
-        self.usuario_referencia = 'mateuslinux_'
+        self.usuario_referencia = ''
         self.site = 'https://www.instagram.com'
     
     def login(self):
@@ -50,13 +50,13 @@ class InstaBot:
         #    self.driver.execute_script("window.scrollTop(0, document.body.scrollHeigh);")
         #    sleep(2)
         
-        lista_de_botoes = self.driver.find_elements_by_tag_name('button')
+        lista_botoes_seguir = self.driver.find_elements_by_xpath("//button[@class='sqdOP  L3NKy   y3zKF     ']")
         sleep(3)
-        btns_seguir = [elem.get_attribute('type') for elem in lista_de_botoes]
-        print(btns_seguir)
-        for botao_seguir in btns_seguir:
-            botao_seguir.click()
+
+        for elem in lista_botoes_seguir:
+            elem.click()
             sleep(1)
+      
     
         
   
