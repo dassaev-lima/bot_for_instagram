@@ -40,7 +40,7 @@ class InstaBot:
 
 
     def seguir_usuarios(self):
-
+        seguidos = 0
         menu_seguidores = self.driver.find_element_by_xpath(f"//a[@href='/{self.usuario_referencia}/followers/']")
         sleep(3)
         menu_seguidores.click()
@@ -55,8 +55,13 @@ class InstaBot:
 
         for elem in lista_botoes_seguir:
             elem.click()
+            seguidos += 1
             sleep(1)
-      
+        
+        return seguidos
+        
+        
+
     
         
   

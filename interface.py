@@ -44,10 +44,13 @@ class Interface:
 
             if bot_insta.valida_senha():
                 bot_insta.login()
+                print('Login efetuado com sucesso')
                 sleep(3)
                 bot_insta.procurar_referencia()
+                print('Acessando o perfil de referência')
                 sleep(2)
-                bot_insta.seguir_usuarios()
+                seguidos = bot_insta.seguir_usuarios()
+                print(f'foram seguidos {seguidos} novos usuários')
             else:
                 print('Problemas no usuário ou senha')
 
